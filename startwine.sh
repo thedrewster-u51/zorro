@@ -12,7 +12,7 @@ then
     echo "[$wname]: Using previous configuration."
 else
     echo "[$wname]: First run configuration."
-    passw=$(pwgen 8)
+    passw='password'
     echo "[$wname]: VNC password: $passw"
     mkdir ~/.vnc
     echo "$passw" | vncpasswd -f > ~/.vnc/passwd
@@ -25,7 +25,7 @@ do
     Xvfb -screen 0 800x600x16 &
     sleep 2
     x0vncserver -display $DISPLAY -passwordfile ~/.vnc/passwd -rfbport 5900 &
-    wine /home/winer/Zorro/Zorro.exe 
+    wine /home/winer/.wine/drive_c/Zorro/Zorro.exe 
     killall x0vncserver
     killall xvfb
 done
