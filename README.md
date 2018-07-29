@@ -9,17 +9,26 @@
 
 # Building
 
-The build is pretty simple, just run "docker build -t zorro:latest .", inside this build context.
+The build is pretty simple, just run `docker build -t zorro:latest .`, inside this build context.
 
 # Running
 
 Once the image is built, you can run it, no arguments required:
 
-"docker run -d -n zorro -p 5900:5900 zorro:latest"
+
+```bash
+docker run -d -n zorro \ 
+	-p 5900:5900 \
+	-v $(pwd)/zorro_data/History:/home/winer/.wine/drive_c/Zorro/History \
+	-v $(pwd)/zorro_data/Strategy:/home/winer/.wine/drive_c/Zorro/Strategy \
+	-v $(pwd)/zorro_data/Log_1:/home/winer/.wine/drive_c/Zorro/Log \
+	zorro:latest
+```
+
 
 Just check what the VNC passwor is in the docker logs:
 
-"docker logs zorro" 
+`docker logs zorro`
 
 Then you will be able to connect via vnc on port 5900
 
