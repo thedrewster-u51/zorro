@@ -1,0 +1,11 @@
+version: "3"
+services:
+  zorro_01:
+    build: .
+    image: zorro:latest
+    ports:
+      - "5901:5901"
+    volumes:  
+      - "./zorro_data/History:/home/winer/Zorro/History"
+      - "./zorro_data/Log_1:/home/winer/Zorro/History"
+      - "./zorro_data/Strategy:/home/winer/Zorro/Strategy"
