@@ -4,8 +4,8 @@
 - Download a copy of Zorro from https://zorro-project.com/ 
 - Run the installed on the linux machine eg. wine Zorro_setup.exe
 - When installing, ensure you install Zorro directly to drive c: (No subdirectories). This is just a convienence thing.
-- Once the installer is done, create an archive of the wine "drive_c" directory "tar -czvf ~/Zorro.tgz ~/.wine/drive_c" 
-- Place the tgz file in the "Zorro" directory, inside this built context and extract it "tar -czvf Zorro.tgz"
+- Once the installer is done, create an archive of the ~/.wine directory `tar -czvf ~/full_wine.tgz .wine -C ~/`
+- Place the tgz file in the "Zorro" directory, inside this built context and extract it `tar -czvf full_wine.tgz` and rename the result directory to "wine": `mv .wine wine`
 
 # Building
 
@@ -22,3 +22,7 @@ Just check what the VNC passwor is in the docker logs:
 "docker logs zorro" 
 
 Then you will be able to connect via vnc on port 5900
+
+I've also added a docker-compose.yaml, for easy of use:
+
+`docker-compose up`
