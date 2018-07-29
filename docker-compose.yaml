@@ -4,7 +4,7 @@ services:
     build: .
     image: zorro:latest
     ports:
-      - "5901:5901"
+      - "5901:5900"
     volumes:  
       - "./zorro_data/History:/home/winer/Zorro/History"
       - "./zorro_data/Log_1:/home/winer/Zorro/History"
